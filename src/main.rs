@@ -18,8 +18,8 @@ struct MyApp {
 }
 
 impl eframe::App for MyApp {
-    fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
-        egui::CentralPanel::default().show(ctx, |ui| {
+    fn ui(&mut self, ui: &mut egui::Ui, _frame: &mut eframe::Frame) {
+        egui::CentralPanel::default().show(ui, |ui| {
             ui.heading("Hello from egui on wgpu");
             ui.text_edit_singleline(&mut self.name);
             ui.label(format!("Hi, {}!", self.name));
